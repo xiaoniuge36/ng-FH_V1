@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Button } from 'antd';
-import './App.css';
+import './App.less';
+import Ahouse from './ahouse';
 
 const App: FC = () => {
   return (
@@ -12,6 +13,8 @@ const App: FC = () => {
       <br />
       <Button type="text">Text Button</Button>
       <Button type="link">Link Button</Button>
+      <div className='test'></div>
+      <Ahouse/>
     </div>
   );
 }

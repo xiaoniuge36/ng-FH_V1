@@ -58,7 +58,7 @@ const items = [
   },
 ];
 
-const App = () => {
+const Ahouse = () => {
   const [current, setCurrent] = useState('mail');
 
   const onClick = (e:any) => {
@@ -69,4 +69,4 @@ const App = () => {
   return <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />;
 };
 
-export default App;
+export default Ahouse;
