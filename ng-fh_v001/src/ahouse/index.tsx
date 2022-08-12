@@ -34,10 +34,8 @@ const Ahouse = () => {
   };
 
   return <div className='content'>
-    <div className='test'></div>
     <div className='top'>
       <Menu className='menu_test' onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
-      <Select  defaultValue="lucy" style={{width: 120}} className="select_test"></Select>
     </div>
 
   </div>;

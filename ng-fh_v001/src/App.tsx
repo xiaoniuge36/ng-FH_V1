@@ -5,7 +5,7 @@ import Ahouse from './ahouse';
 const App: FC = () => {
   return (
     <>
-      <Ahouse/>
+      <Ahouse />
     </>
   );
 }
