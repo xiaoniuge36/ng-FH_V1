@@ -1,72 +1,46 @@
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-import { Menu } from 'antd';
+import { Menu, Select } from 'antd';
 import React, { useState } from 'react';
+import './index.less'
 const items = [
   {
-    label: 'Navigation One',
-    key: 'mail',
-    icon: <MailOutlined />,
+    label: '首页',
+    key: 'main',
   },
   {
-    label: 'Navigation Two',
-    key: 'app',
-    icon: <AppstoreOutlined />,
-    disabled: true,
+    label: '关于我们',
+    key: 'about',
   },
   {
-    label: 'Navigation Three - Submenu',
-    key: 'SubMenu',
-    icon: <SettingOutlined />,
-    children: [
-      {
-        type: 'group',
-        label: 'Item 1',
-        children: [
-          {
-            label: 'Option 1',
-            key: 'setting:1',
-          },
-          {
-            label: 'Option 2',
-            key: 'setting:2',
-          },
-        ],
-      },
-      {
-        type: 'group',
-        label: 'Item 2',
-        children: [
-          {
-            label: 'Option 3',
-            key: 'setting:3',
-          },
-          {
-            label: 'Option 4',
-            key: 'setting:4',
-          },
-        ],
-      },
-    ],
+    label: '服务项目',
+    key: 'service',
   },
   {
-    label: (
-      <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-        Navigation Four - Link
-      </a>
-    ),
-    key: 'alipay',
+    label: '展示案例',
+    key: 'display',
+  },
+  {
+    label: '联系我们',
+    key: 'tel',
   },
 ];
 
 const Ahouse = () => {
-  const [current, setCurrent] = useState('mail');
+  const [current, setCurrent] = useState('main');//当前选中的菜单项
 
-  const onClick = (e:any) => {
-    console.log('click ', e);
-    setCurrent(e.key);
+  const onClick = (e: any) => { //点击菜单项触发的事件
+    console.log('click ', e); //打印出菜单项的key值
+    setCurrent(e.key); //更新当前选中的菜单项
   };
 
-  return <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />;
+  return <div className='content'>
+    <div className='test'></div>
+    <div className='top'>
+      <Menu className='menu_test' onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
+      <Select  defaultValue="lucy" style={{width: 120}} className="select_test"></Select>
+    </div>
+
+  </div>;
 };
 
 export default Ahouse;
